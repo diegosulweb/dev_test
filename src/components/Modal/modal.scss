@@ -1,0 +1,56 @@
+@import '../../index.scss';
+
+.modal {
+  background: $beau-blue-modal;
+}
+.modal-container {
+  position: absolute;
+  width: 60%;
+  background: $gradient-top-left;
+  left: 20%;
+  top: 30%;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @include devices(tablet) {
+    left: 5%;
+    width: 90%;
+  }
+  h1 {
+    margin-bottom: 50px;
+    font-weight: 200;
+    font-size: 4rem;
+  }
+  .modal-close {
+    margin-top: 30px;
+    border: 1px solid $gainsboro;
+    padding: 5px 20px;
+    border-radius: 5px;
+    width: 150px;
+    background-color: $beau-blue;
+    &:hover {
+      background-color: $cerulean-frost;
+    }
+  }
+  table {
+    width: 100%;
+    tr td {
+      &:first-child {
+        font-weight: 600;
+      }
+    }
+    @include devices(tablet) {
+      font-size: 0.8rem;
+    }
+  }
+  p {
+    margin-top: 15px;
+    margin-bottom: 0px;
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+}

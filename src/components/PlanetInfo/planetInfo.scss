@@ -1,0 +1,36 @@
+@import '../../index.scss';
+
+.search-box {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  transition: all 500ms ease-in-out;
+  #planetSearch {
+    border: 0.5px solid $cerulean-frost;
+    width: 50%;
+  }
+  .search {
+    color: $cerulean-frost;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .close-search {
+    color: $cerulean-frost;
+    font-size: 1.5rem;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .search-label {
+    font-size: 1.2rem;
+    color: $cerulean-frost;
+    cursor: pointer;
+  }
+  .close {
+    display: none;
+  }
+  .open {
+    display: block;
+  }
+}

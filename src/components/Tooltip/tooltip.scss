@@ -1,0 +1,94 @@
+/* Custom properties */
+@import '../../index.scss';
+
+/* Wrapping and general settings*/
+.Tooltip-Wrapper {
+  display: inline-block;
+  position: relative;
+  .icon {
+    font-size: 20px;
+    color: $cerulean-frost;
+  }
+  .Tooltip-Tip {
+    position: absolute;
+    border-radius: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px;
+    color: lighten($gainsboro, 20%);
+    background: $cerulean-frost;
+    font-size: 14px;
+    font-family: sans-serif;
+    line-height: 1;
+    z-index: 100;
+    white-space: nowrap;
+    text-align: center;
+    @include devices(tablet) {
+      width: 300px;
+      white-space: unset;
+      background-color: $beau-blue;
+      color: black;
+    }
+    p {
+      margin-bottom: 0px;
+      margin: 5px;
+    }
+    &::before {
+      content: ' ';
+      left: 50%;
+      border: solid transparent;
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-width: 6px;
+      margin-left: calc(6px * -1);
+    }
+  }
+}
+
+/* Top positioning settings */
+.Tooltip-Tip.top {
+  top: calc(30px * -1);
+  &::before {
+    top: 100%;
+    border-top-color: $cerulean-frost;
+  }
+}
+
+/* Right positioning settings */
+.Tooltip-Tip.right {
+  left: calc(100% + 30px);
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+  &::before {
+    left: calc(6px * -1);
+    top: 50%;
+    transform: translateX(0) translateY(-50%);
+    border-right-color: $cerulean-frost;
+  }
+}
+
+/* Bottom positioning settings */
+.Tooltip-Tip.bottom {
+  bottom: calc(30px * -1);
+  &::before {
+    bottom: 100%;
+    border-bottom-color: $cerulean-frost;
+  }
+}
+
+/* Left positioning settings */
+.Tooltip-Tip.left {
+  left: auto;
+  right: calc(100% + 30px);
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+  &::before {
+    left: auto;
+    right: calc(6px * -2);
+    top: 50%;
+    transform: translateX(0) translateY(-50%);
+    border-left-color: $cerulean-frost;
+  }
+}
